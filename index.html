@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body class="font-kanit">
     <div class="hero-content text-center py-4 flex items-center min-h-screen justify-center shadow-xl">
         <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800">
@@ -16,9 +18,61 @@
         </div>
     </div>
     <div class="min-h-screen">
-sau
+        <div class="flex flex-col items-center justify-center mt-5 space-y-5">
+            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-4/5 space-y-2">
+                <h1 class="font-bold text-6xl">Základní informace k výrobku</h1>
+                <p class="text-xl">Tento web popíše stavbu vašeho vlastního plotteru za pomocí Arduina, starých DVD
+                    mechanik a drobných součástek k tomu.
+                    Výsledkem této práce je plotter s možností tisku jakéhokoliv dvoubarevného obrázku v maximálních
+                    rozměrech 4x4 mm.
+                </p>
+                <p class="text-xl">Plotter je navržen tak, aby bylo potřeba co nejméně součástek z jiných zdrojů, než
+                    jsou samotné mechaniky.</p>
+            </div>
+
+            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-4/5 space-y-2">
+                <h1 class="font-bold text-6xl">Co je ke stavbě třeba</h1>
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="col-span-1 bg-gray-50 p-5 rounded-2xl">
+                        <h3 class="text-3xl">Součástky</h3>
+                        <ul>
+                            <li>4 DVD mechaniky</li>
+                            <li>Arduino Nano s procesorem ATmega328P</li>
+                            <li>CNC Shield V4 pro Arduino Nano</li>
+                            <li>Servo motor MG90S</li>
+                            <li>2 drivery DRV8825</li>
+                            <li>12V 1,5A zdroj (minimálně 9V 1A)</li>
+                            <li>2 konektory JST-XH 4pin s vodiči</li>
+                            <li>3 DuPont kabely F-M</li>
+                            <li>Vytisknuté modely z materiálu PLA</li>
+                            <li>Vytisknuté modely z materiálu PETG</li>
+                        </ul>
+                    </div>
+                    <div class="col-span-1 bg-gray-50 p-5 rounded-2xl">
+                        <h3 class="text-3xl">Nářadí</h3>
+                        <ul>
+                            <li>Sada milimetrových šroubováků</li>
+                            <li>Pájka</li>
+                            <li>3D Tiskárna s možností tisknout PETG a PLA</li>
+                            <li>Jehla na otevření mechaniky</li>
+                        </ul>
+                    </div>
+                    <div class="col-span-1 bg-gray-50 p-5 rounded-2xl">
+                        <h3 class="text-3xl">Software</h3>
+                        <ul>
+                            <li>PC</li>
+                            <li>Konektor kompatibilní s vaším Arduino Nano</li>
+                            <li>Arduino IDE</li>
+                            <li>Knihovna GRBL-servo (Github)</li>
+                            <li>Universal GCode Sender (Github)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-      
-        
+
+
 </body>
+
 </html>
