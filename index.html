@@ -34,19 +34,24 @@
 
                 <div class="flex space-x-5">
                     <div>
-                        <img src="./img/plotter-left.JPEG" alt="" class="rounded-2xl">
+                        <img src="./img/plotter-left-small.JPEG" alt="" class="rounded-2xl" width="800px">
                     </div>
                     <div>
-                        <img src="./img/plotter-right.JPEG" alt="" class="rounded-2xl">
+                        <img src="./img/plotter-right-small.JPEG" alt="" class="rounded-2xl" width="800px">
                     </div>
                 </div>
+                <p class="text-xl">
+                    Plotter je vytištěn z materiálu PETG (žlutá) a PLA (bíla). 
+                    Doporučuju se tohoto držet, jelikož záměna materiálu může vést k nefukčnímu výrobku, např. zuby desky osy Y, 
+                    které pohybují celou deskou, vytisknuta z PETG nemusí správně držet kvůli menší přesnosti. Naopak zase tělo vytisknuto z materiálu PLA je náchylnější ke zlomení, tady by to ale pravděpodobně nebylo nijak katastrofické, každopádně doporučuju se držet stanovených materiálu.
+                </p>
             </div>
 
             <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-4/5 space-y-2">
                 <h1 class="font-bold text-6xl">Co je ke stavbě třeba</h1>
                 <div class="grid grid-cols-3 gap-4">
-                    <div class="col-span-1 bg-gray-50 p-5 rounded-2xl">
-                        <h3 class="text-3xl">Součástky a materiály</h3>
+                    <div class="col-span-1 bg-gray-50 border-gray-100 border p-5 rounded-2xl shadow-2xl">
+                        <h3 class="text-3xl text-center mb-2">Součástky a materiály</h3>
                         <ul class="list-disc list-inside">
                             <li>4 DVD mechaniky</li>
                             <li>Arduino Nano s procesorem ATmega328P</li>
@@ -61,8 +66,8 @@
                             <li>Cín</li>
                         </ul>
                     </div>
-                    <div class="col-span-1 bg-gray-50 p-5 rounded-2xl">
-                        <h3 class="text-3xl">Nářadí</h3>
+                    <div class="col-span-1 bg-gray-50 border-gray-100 border p-5 rounded-2xl shadow-2xl">
+                        <h3 class="text-3xl text-center mb-2">Nářadí</h3>
                         <ul class="list-disc list-inside">
                             <li>Sada milimetrových šroubováků</li>
                             <li>Pájka</li>
@@ -70,8 +75,8 @@
                             <li>Jehla na otevření mechaniky</li>
                         </ul>
                     </div>
-                    <div class="col-span-1 bg-gray-50 p-5 rounded-2xl">
-                        <h3 class="text-3xl">Software</h3>
+                    <div class="col-span-1 bg-gray-50 border-gray-100 border p-5 rounded-2xl shadow-2xl">
+                        <h3 class="text-3xl text-center mb-2">Software</h3>
                         <ul class="list-disc list-inside">
                             <li>PC</li>
                             <li>Konektor kompatibilní s vaším Arduino Nano</li>
@@ -79,6 +84,13 @@
                             <li>Knihovna GRBL-servo (Github)</li>
                             <li>Universal GCode Sender (Github)</li>
                         </ul>
+                    </div>
+                </div>
+                <div class="rounded-xl shadow-2xl bg-red-400 p-5 flex">
+                    <span class="text-7xl mr-4">!</span>
+                    <div>
+                        <p class="text-xl font-bold">Varování</p>
+                        <span>Každá mechanika se nějak liší, i stejné značky mechanik můžou uvnitř vypadat jinak, dokonce je i možné, že vaše mechanika tomuto návodu nebude vyhovovat, je třeba proto využít při tomto problému vlastní vynalézavosti a upravit si postup na míru.</span>
                     </div>
                 </div>
             </div>
