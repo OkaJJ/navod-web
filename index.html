@@ -7,10 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>PLOTTER - Návod stavby</title>
 </head>
 
-<body class="font-kanit">
+<body class="font-kanit scroll-smooth">
+
+    <div class="sidebar fixed right-0 top-1/2 bottom-0 h-80 w-44 rounded-l-2xl bg-white shadow-md -translate-y-1/2 transition-all translate-x-full" style="z-index: 100;">
+        <ul class="space-y-1">
+        </ul>
+    </div>
+
     <div class="hero-content text-center py-4 flex items-center min-h-screen justify-center shadow-xl">
         <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800">
             <h1 class="font-bold text-6xl">Stavebnice plotteru z DVD mechanik</h1>
@@ -20,10 +27,12 @@
             <p>Matyáš Cron • 2023</p>
         </div>
     </div>
+
     <div class="min-h-screen">
         <div class="flex flex-col items-center justify-center mt-5 space-y-5">
             <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-4/5 space-y-2">
-                <h1 class="font-bold text-6xl">Základní informace k výrobku</h1>
+                <div class="hidden osnova-anchor anchor-chapter">Základní info</div>
+                <h1 class="font-bold text-4xl osnova-anchor">Základní informace k výrobku</h1>
                 <p class="text-xl">Tento web popíše stavbu vašeho vlastního plotteru za pomocí Arduina, starých DVD
                     mechanik a drobných součástek k tomu.
                     Výsledkem této práce je plotter s možností tisku jakéhokoliv dvoubarevného obrázku v maximálních
@@ -31,7 +40,6 @@
                 </p>
                 <p class="text-xl">Plotter je navržen tak, aby bylo potřeba co nejméně součástek z jiných zdrojů, než
                     jsou samotné mechaniky.</p>
-
                 <div class="flex space-x-5 justify-around">
                     <div class="relative group">
                         <img src="./img/plotter-left-small.JPEG" alt="" class="rounded-2xl" width="600px">
@@ -50,7 +58,7 @@
             </div>
 
             <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-4/5 space-y-2">
-                <h1 class="font-bold text-6xl">Co je ke stavbě třeba</h1>
+                <h1 class="font-bold text-4xl osnova-anchor">Co je ke stavbě třeba</h1>
                 <div class="grid grid-cols-3 gap-4">
                     <div class="col-span-1 bg-gray-50 border-gray-100 border p-5 rounded-2xl shadow-2xl">
                         <h3 class="text-3xl text-center mb-2">Součástky a materiály</h3>
@@ -92,14 +100,131 @@
                     <span class="text-7xl mr-4">!</span>
                     <div>
                         <p class="text-xl font-bold">Varování</p>
-                        <span>Každá mechanika se nějak liší, i stejné značky mechanik můžou uvnitř vypadat jinak, dokonce je i možné, že vaše mechanika tomuto návodu nebude vyhovovat, je třeba proto využít při tomto problému vlastní vynalézavosti a upravit si postup na míru.</span>
+                        <span>Každá mechanika se uvnitř nějak liší, i stejné značky mechanik můžou vypadat jinak, dokonce je i možné, že vaše mechanika tomuto výrobku nebude vyhovovat, je třeba proto využít při tomto problému vlastní vynalézavosti a upravit si postup na míru.</span>
                     </div>
                 </div>
             </div>
+ 
+            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-4/5 space-y-3">
+                <div class="hidden osnova-anchor anchor-chapter">Stavba</div>
+                <h1 class="font-bold text-4xl osnova-anchor"><span class="text-5xl">1.</span> Rozebrání mechaniky</h1>
+                <p class="text-xl">Rozebrání vnějšku mechaniky je skoro všude stejné</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="col-span-1 relative group w-full">
+                        <img src="./img/rozebranimechaniky/2.JPEG" alt="" class="rounded-2xl">
+                        <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                    </div>
+                    <div class="col-span-1 space-y-3">
+                        <p class="text-xl">Připravte si mechaniku tak, že bude přední plastová část koukat na vás. Je zvýrazněna malá dírka, do které je třeba zasunout delší ostrý předmět (například jehlu), díky které se bez připojení k proudu mechanika otevře.</p>
+                        <p class="text-xl">Pokud po se po zasunutí mechanika stále nedaří otevřít, zkuste delší jehlu, nebo aktuální zasunout pod různými úhly (avšak mělo by to být kolmo)</p>
+                        <p class="text-xl">V případě, že se vám jehla zasekne, zlomí či jakkoliv jinak způsobí, že mechanika otevřít nejde, je třeba použít hrubou sílu na vytrhnutí plastové části.</p>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <p class="text-xl">Pokud se vám povedlo otevřít prostor pro disk, vysuňte ho plně a zaměřte se na malé otvory po stranách mechaniky v plechu. Tyto otvory je třeba nějakým předmětem (např. šroubovákem) zatlačit a uvolnit tak plastovou část od plechu.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="col-span-1 relative group w-full">
+                            <img src="./img/rozebranimechaniky/4.JPEG" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                        <div class="col-span-1 relative group w-full">
+                            <img src="./img/rozebranimechaniky/5.JPEG" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="col-span-1 space-y-3">
+                        <p class="text-xl">Pokud se vám podařilo plastovou část odejmout, umistěte ji dále, jako na obrázku, a nyní je na řadě odšroubovat všechny šroubky, které drží plechovou část.</p>
+                        <div class="rounded-xl shadow-2xl bg-red-400 p-5 flex">
+                            <span class="text-7xl mr-4">!</span>
+                            <div>
+                                <p class="text-xl font-bold">Varování</p>
+                                <span>Uchovávejte si v průběhu rozebírání všechny šroubky, nikdy nevíte, které ještě budete dále potřebovat! Šroubky jsou později užity na uchycení motorů a osy X.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 relative group w-full">
+                        <img src="./img/rozebranimechaniky/7.JPEG" alt="" class="rounded-2xl">
+                        <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <p class="text-xl">Po odšroubování šroubků můžeme vyndat celý mechanismus mechaniky ven.</p>
+                    <p class="text-xl">Začneme sejmutím vrchního (plochého) plechu a poté můžeme vytáhnout mechanismus ven z druhé části plechu.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="col-span-1 relative group w-full">
+                            <img src="./img/rozebranimechaniky/9.JPEG" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                        <div class="col-span-1 relative group w-full">
+                            <img src="./img/rozebranimechaniky/10.JPEG" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h3 class="text-5xl text-center">Na pokračování návodu se aktivně pracuje.</h3>
+            </div>
         </div>
     </div>
-
-
+    <footer class="bg-yellow-400 h-20 mt-5 flex content-center justify-between">
+        <div class="bg-white my-auto mx-3 p-2 rounded-xl">
+            Stavebnice plotteru z DVD mechanik - Návod stavby
+        </div>
+        <div class="bg-white my-auto mx-3 p-2 rounded-xl">
+            <a class="underline" href="https://okajj.me">OkaJJ.me</a> 2023
+        </div>
+    </footer>          
 </body>
-
 </html>
+<script>
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) {
+            $('.sidebar').removeClass('translate-x-full');
+        } else {
+            $('.sidebar').addClass('translate-x-full');
+        }
+    });
+
+    $(".osnova-anchor").each(function(index) {
+        let anchor = $(this);
+        if(anchor.hasClass("anchor-chapter")) {
+            $(".sidebar ul").append('<li class="p-1 pl-2 rounded-lg mx-1 text-center transition-all">' + anchor.text() + '</li>');
+            return;
+        }
+        let anchorText = $(this).text();
+        if($(this).attr('data-anchor') != undefined) {
+            anchorText = $(this).attr('data-anchor');
+        }
+        $(".sidebar ul").append('<li id="anchor-' + index + '" class="cursor-pointer bg-gray-50 p-1 pl-2 rounded-lg mx-1 hover:bg-yellow-200 transition-all"><a>' + anchorText + '</a></li>');
+        console.log($("#anchor-" + index));
+        $("#anchor-" + index).click(function() {
+            $('html, body').animate({
+                scrollTop: anchor.offset().top - 100
+            }, 200);
+        });
+    });
+
+    $(window).scroll(function() {
+        let scroll = $(window).scrollTop();
+        $(".osnova-anchor").each(function(index) {
+            if($(this).hasClass("anchor-chapter")) {
+                return;
+            }
+            let anchor = $(this);
+            let anchorText = $(this).text();
+            if($(this).attr('data-anchor') != undefined) {
+                anchorText = $(this).attr('data-anchor');
+            }
+            if (scroll >= anchor.offset().top - 150) {
+                $(".sidebar ul li").removeClass('bg-yellow-400');
+                $("#anchor-" + index).addClass('bg-yellow-400 hover:bg-yellow-300').removeClass("hover:bg-yellow-200");
+            }
+        });
+    });
+    
+</script>
