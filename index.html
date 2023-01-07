@@ -16,6 +16,9 @@
             <h1 class="font-bold text-6xl">Stavebnice plotteru z DVD mechanik</h1>
             <p class="text-xl">Návod stavby</p>
         </div>
+        <div class="absolute bottom-3 bg-white p-2 rounded-lg shadow-xl text-lg">
+            <p>Matyáš Cron • 2023</p>
+        </div>
     </div>
     <div class="min-h-screen">
         <div class="flex flex-col items-center justify-center mt-5 space-y-5">
@@ -28,14 +31,23 @@
                 </p>
                 <p class="text-xl">Plotter je navržen tak, aby bylo potřeba co nejméně součástek z jiných zdrojů, než
                     jsou samotné mechaniky.</p>
+
+                <div class="flex space-x-5">
+                    <div>
+                        <img src="./img/plotter-left.JPEG" alt="" class="rounded-2xl">
+                    </div>
+                    <div>
+                        <img src="./img/plotter-right.JPEG" alt="" class="rounded-2xl">
+                    </div>
+                </div>
             </div>
 
             <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-4/5 space-y-2">
                 <h1 class="font-bold text-6xl">Co je ke stavbě třeba</h1>
                 <div class="grid grid-cols-3 gap-4">
                     <div class="col-span-1 bg-gray-50 p-5 rounded-2xl">
-                        <h3 class="text-3xl">Součástky</h3>
-                        <ul>
+                        <h3 class="text-3xl">Součástky a materiály</h3>
+                        <ul class="list-disc list-inside">
                             <li>4 DVD mechaniky</li>
                             <li>Arduino Nano s procesorem ATmega328P</li>
                             <li>CNC Shield V4 pro Arduino Nano</li>
@@ -46,11 +58,12 @@
                             <li>3 DuPont kabely F-M</li>
                             <li>Vytisknuté modely z materiálu PLA</li>
                             <li>Vytisknuté modely z materiálu PETG</li>
+                            <li>Cín</li>
                         </ul>
                     </div>
                     <div class="col-span-1 bg-gray-50 p-5 rounded-2xl">
                         <h3 class="text-3xl">Nářadí</h3>
-                        <ul>
+                        <ul class="list-disc list-inside">
                             <li>Sada milimetrových šroubováků</li>
                             <li>Pájka</li>
                             <li>3D Tiskárna s možností tisknout PETG a PLA</li>
@@ -59,7 +72,7 @@
                     </div>
                     <div class="col-span-1 bg-gray-50 p-5 rounded-2xl">
                         <h3 class="text-3xl">Software</h3>
-                        <ul>
+                        <ul class="list-disc list-inside">
                             <li>PC</li>
                             <li>Konektor kompatibilní s vaším Arduino Nano</li>
                             <li>Arduino IDE</li>
