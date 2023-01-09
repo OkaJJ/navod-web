@@ -232,6 +232,9 @@
             $('html, body').animate({
                 scrollTop: anchor.offset().top - 100
             }, 200);
+            if($(window).width() < 768) {
+                showSidebar(false);
+            }
         });
     });
 
