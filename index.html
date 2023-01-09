@@ -35,7 +35,7 @@
 
     <div class="min-h-screen">
         <div class="flex flex-col items-center justify-center mt-5 space-y-5">
-            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-4/5 space-y-2">
+            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-11/12 md:w-4/5 space-y-2">
                 <div class="hidden osnova-anchor anchor-chapter">Základní info</div>
                 <h1 class="font-bold text-4xl osnova-anchor">Základní informace k výrobku</h1>
                 <p class="text-xl">Tento web popíše stavbu vašeho vlastního plotteru za pomocí Arduina, starých DVD
@@ -45,13 +45,13 @@
                 </p>
                 <p class="text-xl">Plotter je navržen tak, aby bylo potřeba co nejméně součástek z jiných zdrojů, než
                     jsou samotné mechaniky.</p>
-                <div class="flex space-x-5 justify-around">
-                    <div class="relative group">
-                        <img src="./img/plotter-left-small.JPEG" alt="" class="rounded-2xl" width="600px">
+                <div class="flex justify-around flex-col space-y-2 md:flex-row md:space-x-5">
+                    <div class="relative group w-full">
+                        <img src="./img/plotter-left-small.JPEG" alt="" class="rounded-2xl">
                         <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
                     </div>
-                    <div class="relative group">
-                        <img src="./img/plotter-right-small.JPEG" alt="" class="rounded-2xl" width="600px">
+                    <div class="relative group w-full">
+                        <img src="./img/plotter-right-small.JPEG" alt="" class="rounded-2xl"">
                         <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
                     </div>
                 </div>
@@ -63,9 +63,9 @@
                 </p>
             </div>
 
-            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-4/5 space-y-2">
+            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-11/12 md:w-4/5 space-y-2">
                 <h1 class="font-bold text-4xl osnova-anchor">Co je ke stavbě třeba</h1>
-                <div class="grid grid-cols-3 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="col-span-1 bg-gray-50 border-gray-100 border p-5 rounded-2xl shadow-2xl">
                         <h3 class="text-3xl text-center mb-2">Součástky a materiály</h3>
                         <ul class="list-disc list-inside">
@@ -103,7 +103,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="rounded-xl shadow-2xl bg-red-400 p-5 flex">
+                <div class="relative rounded-xl shadow-2xl bg-red-400 p-5 flex">
                     <span class="text-7xl mr-4">!</span>
                     <div>
                         <p class="text-xl font-bold">Varování</p>
@@ -112,11 +112,11 @@
                 </div>
             </div>
  
-            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-4/5 space-y-3">
+            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-11/12 md:w-4/5 space-y-3">
                 <div class="hidden osnova-anchor anchor-chapter">Stavba</div>
                 <h1 class="font-bold text-4xl osnova-anchor"><span class="text-5xl">1.</span> Rozebrání mechaniky</h1>
                 <p class="text-xl">Rozebrání vnějšku mechaniky je skoro všude stejné</p>
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="col-span-1 relative group w-full">
                         <img src="./img/rozebranimechaniky/2.JPEG" alt="" class="rounded-2xl">
                         <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
@@ -130,7 +130,7 @@
                 <hr>
                 <div>
                     <p class="text-xl">Pokud se vám povedlo otevřít prostor pro disk, vysuňte ho plně a zaměřte se na malé otvory po stranách mechaniky v plechu. Tyto otvory je třeba nějakým předmětem (např. šroubovákem) zatlačit a uvolnit tak plastovou část od plechu.</p>
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="col-span-1 relative group w-full">
                             <img src="./img/rozebranimechaniky/4.JPEG" alt="" class="rounded-2xl">
                             <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
@@ -142,7 +142,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="col-span-1 space-y-3">
                         <p class="text-xl">Pokud se vám podařilo plastovou část odejmout, umistěte ji dále, jako na obrázku, a nyní je na řadě odšroubovat všechny šroubky, které drží plechovou část.</p>
                         <div class="rounded-xl shadow-2xl bg-red-400 p-5 flex">
@@ -162,7 +162,7 @@
                 <div>
                     <p class="text-xl">Po odšroubování šroubků můžeme vyndat celý mechanismus mechaniky ven.</p>
                     <p class="text-xl">Začneme sejmutím vrchního (plochého) plechu a poté můžeme vytáhnout mechanismus ven z druhé části plechu.</p>
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="col-span-1 relative group w-full">
                             <img src="./img/rozebranimechaniky/9.JPEG" alt="" class="rounded-2xl">
                             <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
