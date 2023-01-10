@@ -99,7 +99,7 @@
                         <ul class="list-disc list-inside">
                             <li>Konektor kompatibilní s vaším Arduino Nano</li>
                             <li>Arduino IDE (<a class="text-blue-400 hover:text-blue-500 transition-colors underline" href="https://www.arduino.cc/en/software" target="_blank">arduino.cc</a>)</li>
-                            <li>Knihovna GRBL-servo (<a class="text-blue-400 hover:text-blue-500 transition-colors underline" href="https://github.com/robottini/grbl-servo" target="_blank">github.com</a>)</li>
+                            <li>Knihovna GRBL-Pen-servo (<a class="text-blue-400 hover:text-blue-500 transition-colors underline" href="https://github.com/bdring/Grbl_Pen_Servo" target="_blank">github.com</a>)</li>
                             <li>Universal GCode Sender (<a class="text-blue-400 hover:text-blue-500 transition-colors underline" href="https://winder.github.io/ugs_website/" target="_blank">github.com</a>)</li>
                         </ul>
                     </div>
@@ -239,7 +239,7 @@
                 </div>
             </div>
             <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-11/12 md:w-4/5 space-y-3">
-                <h1 class="font-bold text-4xl osnova-anchor" id="atrozebrani"><span class="text-5xl">2.</span> Příprava krokových motorů</h1>
+                <h1 class="font-bold text-4xl osnova-anchor"><span class="text-5xl">2.</span> Příprava krokových motorů</h1>
                 <p class="text-xl">Nyní musíme připravit a vyzkoušet krokové motory, plochý spoj můžeme odstřihnout tak, aby co nejméně zavazel, jelikož vytrhnutí je až moc nebezpečné z důvodu zničení motoru.</p>
                 <div>
                     <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
@@ -271,8 +271,47 @@
                 </div>
             </div>
             <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-11/12 md:w-4/5 space-y-3">
-                <h1 class="font-bold text-4xl osnova-anchor" id="atrozebrani"><span class="text-5xl">3.</span> Příprava Arduina a CNC Shieldu</h1>
+                <h1 class="font-bold text-4xl osnova-anchor"><span class="text-5xl">3.</span> Příprava Arduina a CNC Shieldu</h1>
                 <p class="text-xl">Po přípavě všech součástek z mechanik se můžeme pustit k Arduinu a samotnému CNC Shieldu</p>
+                <div>
+                    <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="col-span-1 relative group w-full flex flex-col justify-center">
+                            <p class="text-xl">Prvně si připravíme softwarově samotné Arduino, stáhněte si Arduino IDE a potřenou knihovnu (<a class="text-blue-400 hover:text-blue-500 transition-colors underline" href="https://github.com/bdring/Grbl_Pen_Servo" target="_blank">GRBL-pen-servo</a>) a následujte kroky</p>
+                            <ol class="list-decimal list-inside mt-3">
+                                <li class="text-xl">
+                                    Otevřete Arduino IDE a v menu <b>Projekt</b> vyberte <b>Přidat knihovnu</b> a v tom zvolte <b>Přidat .ZIP Knihovnu</b>
+                                </li>
+                                <li class="text-xl">
+                                    V okně, které se otevře, vyberte stažený soubor <b>grbl-pen-servo-master.zip</b> a klikněte na <b>Open</b>
+                                </li>
+                                <li class="text-xl">
+                                    V nabídce <b>Soubor</b> vyberte <b>Příklady</b> a najděte na konci seznamu <b>grbl-pen-servo-master</b>, v něm vyberte grblUpload
+                                </li>
+                                <li class="text-xl">
+                                    Jakmile uvidíte kód, který je zakončem direktivou include, můžete nahrát kód na Arduino (Nezapomeňte zvolit <b>správnou desku a port!</b>)
+                                </li>
+                            </ol>
+                            <div class="rounded-xl shadow-2xl bg-orange-300 p-5 flex mt-2">
+                                <span class="text-7xl mr-4">!</span>
+                                <div>
+                                    <p class="text-xl font-bold">Upozornění</p>
+                                    <p>Knihovna GRBL je opravdu velká, takže nahrávání může trvat déle než obvykle, v závislosti na rychlosti vašeho počítače.</p>
+                                </div>
+                            </div>
+                            <p class="text-xl mt-4">Po nahrání je Arduino připraveno a můžeme pokračovat k CNC Shieldu</p>
+                        </div>
+                        <div class="col-span-1 space-y-2">
+                            <div class="relative group w-full">
+                                <img src="./img/pripravaarduinaacncshieldu/1.png" alt="" class="rounded-2xl">
+                                <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                            </div>
+                            <div class="relative group w-full">
+                                <img src="./img/pripravaarduinaacncshieldu/2.png" alt="" class="rounded-2xl">
+                                <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div>
                     <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="col-span-1 space-y-2">
@@ -327,6 +366,101 @@
                     </div>
                 </div>
             </div>
+            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-11/12 md:w-4/5 space-y-3">
+                <h1 class="font-bold text-4xl osnova-anchor" id="atrozebrani"><span class="text-5xl">4.</span> Testování a nastavení motorů</h1>
+                <p class="text-xl">Nyní máme fyzicky vše připraveno, teď je třeba odzkoušet naše krokové motory, jestli jsou správně zapojené a jestli běží tak, jak mají.</p>
+                <div>
+                    <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="col-span-1 relative group w-full flex flex-col justify-center">
+                            <p class="text-xl"><b>Nezapojujte Arduino ani napájení CNC Shieldu při manipulaci s kabely!</b></p>
+                            <p class="text-xl">Nyní zapojíme servo motor a krokové motory k osazenému CNC Shieldu. Servo motor má tři barevné kabely, oranžový, červený a hnědý. Zapojte ho podle obrázku</p>
+                            <p class="text-xl">Servo motor je třeba připojit na DuPont kabely, jelikož 3 kontakty vedoucí z něho jsou napevno u sebe a my potřebujeme 1 kontakt jinde, než zbylé 2.</p>
+                            <div class="rounded-xl shadow-2xl bg-red-400 p-5 flex mt-3">
+                                <span class="text-7xl mr-4">!</span>
+                                <div>
+                                    <p class="text-xl font-bold">Varování</p>
+                                    <span>Doporučuji si <b>vždy</b> zkontrolovat zapojení dle vašeho vlastního serva (i pokud má stejné jméno, můžou být kontakty prohozeny), jelikož chybné zapojení může vést nejen ke spálení serva ale ke spálení samotného Arduina!</span>
+                                </div>
+                            </div>
+                            <p class="text-xl mt-5">Po zapojení servo motoru můžeme zapojit krokové motory do námi napájených přípojek</p>
+                        </div>
+                        <div class="col-span-1 space-y-2">
+                            <div class="relative group w-full">
+                                <img src="./img/pripravaarduinaacncshieldu/5.png" alt="" class="rounded-2xl">
+                                <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="col-span-1 space-y-2">
+                            <div class="relative group w-full">
+                                <img src="./img/pripravaarduinaacncshieldu/6.png" alt="" class="rounded-2xl">
+                                <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                            </div>
+                            <div class="relative group w-full">
+                                <img src="./img/pripravaarduinaacncshieldu/7.png" alt="" class="rounded-2xl">
+                                <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                            </div>
+                        </div>
+                        <div class="col-span-1 relative group w-full flex flex-col justify-center">
+                            <p class="text-xl">Pokud máme vše zapojené dle obrázku, můžeme poprvé zapojit a spustit Arduino.</p>
+                            <ol class="list-decimal list-inside">
+                                <li class="text-xl">Stáhněte si Universal GCode Sender (<a class="text-blue-400 hover:text-blue-500 transition-colors underline" href="https://winder.github.io/ugs_website/" target="_blank">github.com</a>) a spusťte ho</li>
+                                <li class="text-xl">Stiskněte tlačítko pro prohledání portů (1)</li>
+                                <li class="text-xl">Vyberte správný port pro Arduino (2)</li>
+                                <li class="text-xl">Připojte se k Arduinu (3)</li>
+                                <li class="text-xl">Pokud bylo připojení úspěšné, klikněte na nabídku <b>Machine</b> a vyberte <b>Setup Wizard</b></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="col-span-1 relative group w-full flex flex-col justify-center">
+                            <p class="text-xl">V Setup wizardu se proklikejte k 3. bodu <b>Motor wiring</b> a zůstaňte na něm.</p>
+                            <p class="text-xl mt-3">Nyní je na řadě zapojit externí napájení. Zapojte napájení a sledujte teplotu krokových motorů (podržte válec motoru v ruce).</p>
+                            <div class="rounded-xl shadow-2xl bg-red-400 p-5 flex mt-3">
+                                <span class="text-7xl mr-4">!</span>
+                                <div>
+                                    <p class="text-xl font-bold">Varování</p>
+                                    <span>Pokud se začne motor přehřívat, okamžitě vypojte externí napájení! Pravděpodobně váš driver má trimr na omezení proudu naopak, otočte v tomto případě trimr opatrně na druhou stranu a vyzkoušejte zapojit napájení. Pokud se chová stejně i v tomto případě, pravděpodobně je chyba na straně driveru.</span>
+                                </div>
+                            </div>
+                            <p class="text-xl mt-3">Po zapojení zkuste zmáčknout tlačítka <b>X+</b>, <b>X-</b>, <b>Y+</b> nebo <b>Y-</b>. Tyto tlačítka pohybují s motory, pokud jste nastavili trimr správně, motory by se němely hýbat.</p>
+                        </div>
+                        <div class="relative group w-full">
+                            <img src="./img/pripravaarduinaacncshieldu/8.png" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="relative group w-full">
+                            <img src="./img/pripravaarduinaacncshieldu/6.JPEG" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                        <div class="col-span-1 relative group w-full flex flex-col justify-center">
+                            <p class="text-xl">Pomalu otáčejte po malých krocích trimrem a po každém kroku vyzkoušejte pohnout s motory přes program.</p>
+                            <p class="text-xl">Naším cílem je nastavit trimr na driveru tak, abychom chytli krokový motor lehce v ruce jako na obrázku a pokud motor překoná tento malý odpor, je správně nastaven, pokud ne, je třeba přidat na trimru.</p>
+                            <div class="relative rounded-xl shadow-2xl bg-green-400 p-5 flex mt-2">
+                                <span class="text-7xl mr-4">!</span>
+                                <div>
+                                    <p class="text-xl font-bold">TIP</p>
+                                    <p>Pro docílení optimálního chodu motoru je opravdu třeba vyhrát si s nastavením trimru na nejnižší možnou hodnotu, později se při delších kreslících úkonech může špatně nastavený krokový motor přehřát a zničit nejen sebe.</p>
+                                    <p>Je také důležité zmínit, že motory, pokud není trimr na minimu, se zahřejou <b>vždy</b>. Při frekventovaném pohybu se motory dokážou velmi zahřát (dokonce i na 90°!). Toto je <b>normální</b> chování.</p>
+                                </div>
+                            </div>
+                            <p class="text-xl mt-3">Takhle nastavte oba motory, musí se ale <b>vše nastavovat s nějvyšší opatrností</b>, tento krok je nejriskantnější z hlediska destrukce součástek.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <footer class="bg-yellow-400 h-20 mt-5 flex content-center justify-between">
@@ -335,7 +469,7 @@
         </div>
         <div class="bg-white my-auto mx-3 p-2 rounded-xl">
             <a class="underline" href="https://okajj.me">OkaJJ.me</a> 2023<br>
-            <a class="underline" href="https://github.com/OkaJJ/plotter-navod">Tato stránka na Githubu</a>
+            <a class="underline" href="https://github.com/OkaJJ/plotter-navod">Tato stránka na GitHubu</a>
         </div>
     </footer>          
 </body>
