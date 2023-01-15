@@ -63,7 +63,7 @@
                 </p>
 
                 <p class="text-4xl text-center">
-                    Tento návod není vhodný pro amatéry, je potřeba zručnost, znalost Arduina a základní elektrotechniky.
+                    Tento návod není vhodný pro amatéry, je potřeba zručnost, znalost Arduina a základy elektrotechniky.
                 </p>
             </div>
 
@@ -90,6 +90,7 @@
                             <li>5x kovový šroub M3x10mm</li>
                             <li>5x kovová matice M3</li>
                             <li>Cín</li>
+                            <li>Vazelína</li>
                         </ul>
                     </div>
                     <div class="col-span-1 bg-gray-50 border-gray-100 border p-5 rounded-2xl shadow-2xl">
@@ -381,7 +382,7 @@
                     <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="col-span-1 relative group w-full flex flex-col justify-center">
                             <p class="text-xl"><b>Nezapojujte Arduino ani napájení CNC Shieldu při manipulaci s kabely!</b></p>
-                            <p class="text-xl">Nyní zapojíme servo motor a krokové motory k osazenému CNC Shieldu. Servo motor má tři barevné kabely, oranžový, červený a hnědý. Zapojte je podle obrázku</p>
+                            <p class="text-xl">Nyní zapojíme servo motor a krokové motory k osazenému CNC Shieldu. Servo motor má tři barevné kabely, oranžový (signál), červený (napájení) a hnědý (zem). Zapojte je podle obrázku</p>
                             <p class="text-xl">Servo motor je třeba připojit na DuPont kabely, jelikož 3 kontakty vedoucí z něho jsou napevno u sebe a my potřebujeme 1 kontakt jinde, než zbylé 2.</p>
                             <div class="rounded-xl shadow-2xl bg-red-400 p-5 flex mt-3">
                                 <span class="text-7xl mr-4">!</span>
@@ -430,7 +431,7 @@
                     <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="col-span-1 relative group w-full flex flex-col justify-center">
                             <p class="text-xl">V Setup wizardu se proklikejte k 3. bodu <b>Motor wiring</b> a zůstaňte na něm.</p>
-                            <p class="text-xl mt-3">Nyní je na řadě zapojit externí napájení. Zapojte napájení a sledujte teplotu krokových motorů (podržte válec motoru v ruce).</p>
+                            <p class="text-xl mt-3">Nyní je na řadě <b>zapojit externí napájení</b>. Po zapojení sledujte teplotu krokových motorů (podržte válec motoru v ruce).</p>
                             <div class="rounded-xl shadow-2xl bg-red-400 p-5 flex mt-3">
                                 <span class="text-7xl mr-4">!</span>
                                 <div>
@@ -455,19 +456,24 @@
                         </div>
                         <div class="col-span-1 relative group w-full flex flex-col justify-center">
                             <p class="text-xl">Pomalu otáčejte po malých krocích trimrem a po každém kroku vyzkoušejte pohnout s motory přes program.</p>
-                            <p class="text-xl">Naším cílem je nastavit trimr na driveru tak, abychom chytli krokový motor lehce v ruce jako na obrázku a pokud motor překoná tento malý odpor, je správně nastaven, pokud ne, je třeba přidat na trimru.</p>
-                            <div class="relative rounded-xl shadow-2xl bg-green-400 p-5 flex mt-2">
+                            <p class="text-xl">Naším cílem je nastavit trimr na driveru tak, aby se hýbal a zbytečně nepřehříval. Jelikož toto budem muset nastavit při finálním sestavení detailněji, nastavíme trimr tak, aby byl pohyb plynulý a protékající proud co nejmenší.</p>
+                            <p class="text-xl mt-3"><b>Proto nechte motor v momentě, kdy se po otáčení trimru poprvé plynule pohne.</b> Teď již víme, že motor funguje, tak jak má.</p>
+                            <!-- <div class="relative rounded-xl shadow-2xl bg-green-400 p-5 flex mt-2">
                                 <span class="text-7xl mr-4">!</span>
                                 <div>
                                     <p class="text-xl font-bold">TIP</p>
                                     <p>Pro docílení optimálního chodu motoru je opravdu třeba vyhrát si s nastavením trimru na nejnižší možnou hodnotu, později se při delších kreslících úkonech může špatně nastavený krokový motor přehřát a zničit nejen sebe.</p>
                                     <p>Je také důležité zmínit, že motory, pokud není trimr na minimu, se zahřejou <b>vždy</b>. Při frekventovaném pohybu se motory dokážou velmi zahřát (dokonce i na 90°!). Toto je <b>normální</b> chování.</p>
                                 </div>
-                            </div>
+                            </div> -->
                             <p class="text-xl mt-3">Takhle nastavte oba motory, musí se ale <b>vše nastavovat s nějvyšší opatrností</b>, tento krok je nejriskantnější z hlediska destrukce součástek.</p>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-11/12 md:w-4/5 space-y-3">
+                <h1 class="font-bold text-4xl osnova-anchor" id="atrozebrani"><span class="text-5xl">5.</span> 3D Tisk a sestavení</h1>
+                <p class="text-xl">Fyzické zapojení je hotovo, v tento moment bysme měli mít všechny hýbající se elektronické součástky funkční a můžeme začít s tělem celého plotteru</p>
             </div>
         </div>
     </div>
