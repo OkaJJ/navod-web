@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>PLOTTER - Návod stavby</title>
 </head>
 
@@ -284,21 +285,39 @@
                 <h1 class="font-bold text-4xl osnova-anchor"><span class="text-5xl">3.</span> Příprava Arduina a CNC Shieldu</h1>
                 <p class="text-xl">Po přípravě všech součástek z mechanik se můžeme pustit k Arduinu a samotnému CNC Shieldu</p>
                 <div>
-                    <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="grid  grid-cols-1 gap-4">
                         <div class="col-span-1 relative group w-full flex flex-col justify-center">
                             <p class="text-xl">Prvně si připravíme softwarově samotné Arduino, stáhněte si Arduino IDE a potřebnou knihovnu (<a class="text-blue-400 hover:text-blue-500 transition-colors underline" href="https://github.com/bdring/Grbl_Pen_Servo" target="_blank">GRBL-pen-servo</a>) a následujte kroky</p>
                             <ol class="list-decimal list-inside mt-3">
                                 <li class="text-xl">
-                                    Otevřete Arduino IDE a v menu <b>Projekt</b> vyberte <b>Přidat knihovnu</b> a v tom zvolte <b>Přidat .ZIP Knihovnu</b>
+                                    Nainstalujte knihovnu GRBL podle tohoto návodu: <a class="text-blue-400 hover:text-blue-500 transition-colors underline" href="https://github.com/gnea/grbl/wiki/Compiling-Grbl" target="_blank">Github - Compiling GRBL</a>
                                 </li>
                                 <li class="text-xl">
-                                    V okně, které se otevře, vyberte stažený soubor <b>grbl-pen-servo-master.zip</b> a klikněte na <b>Open</b>
+                                    V nabídce <b>Soubor</b> vyberte <b>Příklady</b> a najděte na konci seznamu <b>grbl</b>, v něm vyberte <b>grblUpload</b>
                                 </li>
                                 <li class="text-xl">
-                                    V nabídce <b>Soubor</b> vyberte <b>Příklady</b> a najděte na konci seznamu <b>grbl-pen-servo-master</b>, v něm vyberte <b>grblUpload</b>
+                                    Jakmile uvidíte kód, který je zakončem direktivou include, musíme si knihovnu donastavit. V nabídce <b>Projekt</b> klikněte na <b>Zobraz adresář s projekty</b>.
+                                    <div class="relative group w-full flex justify-center">
+                                        <img src="./img/ladeni/1.png" alt="" class="rounded-2xl">
+                                        <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                                    </div>
                                 </li>
                                 <li class="text-xl">
-                                    Jakmile uvidíte kód, který je zakončem direktivou include, můžete nahrát kód na Arduino (Nezapomeňte zvolit <b>správnou desku a port!</b>)
+                                    V průzkumníkovi souborů vyberte adresář <b>grbl</b>
+                                    <div class="relative group w-full flex justify-center">
+                                        <img src="./img/ladeni/2.png" alt="" class="rounded-2xl">
+                                        <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                                    </div>
+                                </li>
+                                <li class="text-xl">
+                                    A v tomto adresaří otevřete soubor <b>cpu_map.h</b> v textovém editoru. Na řádcích 41 až 43 nahraďte <b>2, 3, 4</b> za <b>5, 6, 7</b> a na řádcích 49 až 51 zase naopak.
+                                    <div class="relative group w-full flex justify-center">
+                                        <img src="./img/ladeni/3.png" alt="" class="rounded-2xl">
+                                        <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                                    </div>
+                                </li>
+                                <li class="text-xl">
+                                    Soubor uložte a nahrejte program do Arduina, nezapomeňte zvolit správnou <b>desku</b> a <b>port</b>!.
                                 </li>
                             </ol>
                             <div class="rounded-xl shadow-2xl bg-orange-300 p-5 flex mt-2">
@@ -309,16 +328,6 @@
                                 </div>
                             </div>
                             <p class="text-xl mt-4">Po nahrání je Arduino připraveno a můžeme pokračovat k CNC Shieldu</p>
-                        </div>
-                        <div class="col-span-1 space-y-2">
-                            <div class="relative group w-full">
-                                <img src="./img/pripravaarduinaacncshieldu/1.png" alt="" class="rounded-2xl">
-                                <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
-                            </div>
-                            <div class="relative group w-full">
-                                <img src="./img/pripravaarduinaacncshieldu/2.png" alt="" class="rounded-2xl">
-                                <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -697,15 +706,10 @@
                 <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="col-span-1 relative group w-full flex flex-col justify-center">
                         <div class="relative group w-full">
-                            <img src="./img/3dtiskasestaveni/16.jpg" alt="" class="rounded-2xl">
+                            <img src="./img/3dtiskasestaveni/17.jpg" alt="" class="rounded-2xl">
                             <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
                         </div>
                     </div>
-                    <div class="col-span-1 relative group w-full flex flex-col justify-center">
-                        <p class="text-xl mb-3">Zasuneme druhou osu do spodní části ramena a poté tuto osu provléknout pod přípravou pro "limit switche" tak, abysme ji mohli zasunout do modelu přesně tak, jako vrchní osu.</p>
-                    </div>
-                </div>
-                <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="col-span-1 relative group w-full flex flex-col justify-center">
                         <p class="text-xl mb-3">Nakonec přichytíme osy k modelu přiděláním šroubků a konstrukčně máme hotovo.</p>
                         <div class="rounded-xl shadow-2xl bg-red-400 p-5 flex mt-2">
@@ -716,14 +720,63 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-11/12 md:w-4/5 space-y-3">
+                <h1 class="font-bold text-4xl osnova-anchor" id="atrozebrani"><span class="text-5xl">6.</span> Ladění</h1>
+                <p class="text-xl">Plotter je sestrojen, nyní můžeme začít ladit všechny motory tak, aby fungovaly správně.</p>
+                <p class="text-xl">Je velmi důležité nastavit správně maximální proud u driverů a aktuálně by měl být nastaven tak, že se hýbe s absolutně minimálním proudem. Nyní ale, jelikož je plotter sestaven a vozíky jsou na místě, bude na ně kladen větší odpor a musí se upravit tento maximální proud na ideální hodnotu.</p>
+                <p class="text-xl">Nejideálnější stav je ten, kdy motory posouvají s vozíky plynule a co <b>nejméně</b> se zahřívají (protéká nimi co nejmenší proud)</p>
+                <p class="text-xl">Zapojte plotter k počítači a do externího napájení, připojte k <b>UGS</b> (viz. Testování a nastavení motorů) a zkoušejte pohnout s motory. Po každém pokusu mírně upravte maximální proud na driveru a vyzkoušejte.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3">
+                    <div class="col-span-1 mt-5 md:mt-0">
+                        <p class="text-center text-2xl font-bold"><i class="fa-solid fa-xmark text-red-500"></i> Moc malý proud</p>
+                        <div class="flex justify-center">
+                            <iframe width="480" height="315" src="https://www.youtube.com/embed/ZxyIcrfHE4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-center">Motor osy Y se nehýbe vůbec, motor osy X se hodně zasekává, motory jsou studené</p>
+                        <hr>
+                        <p class="text-center font-bold">Zvyšte mírně maximální proud na driveru</p>
+                    </div>
+                    <div class="col-span-1 mt-5 md:mt-0">
+                        <p class="text-center text-2xl font-bold"><i class="fa-solid fa-check text-green-500"></i> Ideální stav</p>
+                        <div class="flex justify-center">
+                            <iframe width="480" height="315" src="https://www.youtube.com/embed/kV-9l0IXqzc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-center">Oba motory se plynule pohybují, motory jsou teplé až horké</p>
+                    </div>
+                    <div class="col-span-1 mt-5 md:mt-0">
+                        <p class="text-center text-2xl font-bold"><i class="fa-solid fa-xmark text-red-500"></i> Moc velký proud</p>
+                        <div class="flex justify-center">
+                            <iframe width="480" height="315" src="https://www.youtube.com/embed/AB8SLZdyS6g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-center">Oba motory se pohybují, ale jde slyšet velmi výrazné pískání, motory jsou <b>extrémně horké</b></p>
+                        <hr>
+                        <p class="text-center font-bold">Okamžitě plotter odpojte od externího napájení a nechte vychladnout, maximální proud snižte</p>
+                    </div>
+                </div>
+                <p class="text-xl">Jakmile máme krokové motory v ideálním stavu, můžeme poupravit servo, které zvedá páku s propiskou. Již jste si asi všimli, že při zapojení Arduina k počítači se servo posune na svou výchozí pozici, toto se dá upravit přímo v nastavení celého GRBL před nahráním do Arduina.</p>
+                <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="col-span-1 relative group w-full flex flex-col justify-center">
+                        <p class="text-xl mb-3">Dostaňte se do složky se soubory pro GRBL (viz. Příprava Arduina a CNC Shieldu) a otevřete soubor <b>spindle_control.c</b></p>
+                        <p class="text-xl mb-3">Musíte zde upravit řádky 47 a 48, tyto řádky definujou, kde se servo zastaví při stavu zvednuté a položené propisce. Hrajte si s tímto nastavením tak, aby vám servo při stavu zvednuté propisky mírně podepíralo páku a při položené propisce nepodepíralo páku nijak. Osobně jsem našel ideální hodnoty 28 a 22.</p>
+                    </div>
                     <div class="col-span-1 relative group w-full flex flex-col justify-center">
                         <div class="relative group w-full">
-                            <img src="./img/3dtiskasestaveni/17.jpg" alt="" class="rounded-2xl">
+                            <img src="./img/ladeni/4.png" alt="" class="rounded-2xl">
                             <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
                         </div>
                     </div>
                 </div>
+                <p class="text-xl">Správně nastavený servo motor by se při zvednutí a položení propisky měl chovat takto.</p>
+                <div class="col-span-1 relative group w-full flex flex-col justify-center">
+                    <div class="relative group w-full flex justify-center">
+                        <img src="./img/ladeni/5.gif" alt="" class="rounded-2xl">
+                        <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                    </div>
+                </div>
             </div>
+            <p class="text-3xl">Stavba je v tento moment hotová a plotter funkční.</p>
         </div>
     </div>
     <footer class="bg-yellow-400 h-20 mt-5 flex content-center justify-between">
