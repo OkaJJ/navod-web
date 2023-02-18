@@ -777,6 +777,145 @@
                 </div>
             </div>
             <p class="text-3xl">Stavba je v tento moment hotová a plotter funkční.</p>
+            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-11/12 md:w-4/5 space-y-3">
+                <div class="hidden osnova-anchor anchor-chapter">Příprava k tisku</div>
+                <p class="text-xl">UGS potřebuje ke správné funkčnosti G-Code, což je soubor, který popisuje celý výsledný obrázek pomocí cest a akcí, co má zařízení dělat, ale většina obrázků na internetu jsou rastrového typu, což znamená, že je popsán každý samostatný pixel a to nám vůbec nevyhovuje. Z toho důvodu musíme rastrový obrázek nejdříve převést na vektorový obrázek, který již má v sobě všechny potřebné cesty a poté převést vektorový obrázek na G-Code, který do souboru přidá všechny instrukce pro plotter.</p>
+                <h1 class="font-bold text-4xl osnova-anchor"><span class="text-5xl">1.</span> Převod obrázku na SVG v InkScape</h1>
+                <p class="text-xl">Stáhněte si předlohu pro plotter (<a class="text-blue-400 hover:text-blue-500 transition-colors underline" href="./files/predloha.svg" download>predloha.svg</a>)</p>
+                <ol class="list-decimal list-inside mt-3">
+                    <li class="text-xl">
+                        Otevřete si předlohu v programu <a class="text-blue-400 hover:text-blue-500 transition-colors underline" href="https://inkscape.org/">InkScape</a>
+                        <div class="relative group w-full flex justify-center">
+                            <img src="./img/tisk/1.png" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </li>
+                    <li class="text-xl mt-2">
+                        V Inkscape si importujte obrázek, který chcete nakreslit. V nabídce <b>Soubor</b> klikněte na <b>Importovat...</b> a zvolte váš obrázek.
+                        <div class="relative group w-full flex justify-center">
+                            <img src="./img/tisk/2.png" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </li>
+                    <li class="text-xl mt-2">
+                        Importovaný obrázek bude nejspíš příliš velký, takže ho musíme zmenšit tak, aby se vlezl na plátno.
+                        <div class="relative group w-full flex justify-center">
+                            <img src="./img/tisk/3.png" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </li>
+                    <li class="text-xl mt-2">
+                        Jakmile máme obrázek správně napozicovaný, otevřeme menu trasování bitmapy pomocí zkratky <b>Shift+Alt+B</b> a zmáčkněte tlačítko <b>Použít</b>
+                        <div class="relative group w-full flex justify-center">
+                            <img src="./img/tisk/4.png" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </li>
+                    <li class="text-xl mt-2">
+                        Poté použijeme zkratku <b>Ctrl+Shift+E</b> pro Export a exportujem obrázek jako Plain SVG (.svg) a <b>Export</b>.
+                        <div class="relative group w-full flex justify-center">
+                            <img src="./img/tisk/5.png" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </li>
+                </ol>
+                <h1 class="font-bold text-4xl osnova-anchor"><span class="text-5xl">2.</span> Převod SVG na G-CODE v jscut.org</h1>
+                <ol class="list-decimal list-inside mt-3">
+                    <li class="text-xl mt-2">
+                        Nyní můžeme přejít do aplikace <a class="text-blue-400 hover:text-blue-500 transition-colors underline" href="https://jscut.org">jscut.org</a> a importujte nastavení.
+                        <div class="relative group w-full flex justify-center">
+                            <img src="./img/tisk/6.png" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </li>
+                    <li class="text-xl mt-2">
+                        Jako další naimportujem vektorový obrázek, který jsme vytvořili v InkScape.
+                        <div class="relative group w-full flex justify-center">
+                            <img src="./img/tisk/7.png" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </li>
+                    <li class="text-xl mt-2">
+                        Jakmile ho naimportujem, tak klikneme kdekoliv na šedou část výkresu, ta by se měla vybarvit modře, což znamená, že jsme ho zvolili.
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="relative group w-full flex justify-center">
+                                <img src="./img/tisk/8.png" alt="" class="rounded-2xl">
+                                <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                            </div>
+                            <div class="relative group w-full flex justify-center">
+                                <img src="./img/tisk/9.png" alt="" class="rounded-2xl">
+                                <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="text-xl mt-2">
+                        Přejdeme na levou stranu na záložku <b>Operations</b> a klikneme na <b>Create Operation</b>
+                        <div class="relative group w-full flex justify-center">
+                            <img src="./img/tisk/10.png" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </li>
+                    <li class="text-xl mt-2">
+                        Rozklikněte nabídku, kde je v základu vybraný <b>Pocket</b> a vyberte možnost <b>Engrave</b>, nastavte taky číslo vedle nabídky na 0.1 a klikněte <b>Generate</b>
+                        <div class="relative group w-full flex justify-center">
+                            <img src="./img/tisk/12.png" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </li>
+                    <li class="text-xl mt-2">
+                        Po kliknutí na <b>Generate</b> se vybraný obrázek změní na žlutý a to znamená, že G-CODE byl vygenerován. Klikneme na <b>Save GCODE</b> a stáhnem si soubor s příponou <b>.gcode</b>
+                        <div class="relative group w-full flex justify-center">
+                            <img src="./img/tisk/13.png" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="hidden osnova-anchor anchor-chapter">Tisk</div>
+            <div class="bg-white p-10 rounded-xl shadow-2xl text-gray-800 w-11/12 md:w-4/5 space-y-3">
+                <h1 class="font-bold text-4xl osnova-anchor" id="atrozebrani"><span class="text-5xl">1.</span> Volba a uchycení psací potřeby</h1>
+                <p class="text-xl">Do mechanismu psací potřeby lze upevnit asi cokoliv, ale nejlepší výsledky jsou pouze s obyčejnou měkkou tužkou a na té to taky bude zde ukázáno. Nebraňte se však své vlastní vynalézavosti a zkuste kreslit s čím chcete a co vás napadne.</p>
+                <div class="grid  grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="col-span-1 relative group w-full flex flex-col justify-center">
+                        <p class="text-xl mb-3">Tužku můžete uchytit při vypnutém plotteru a ve stavu položené tužky. Mírně nadzvedněte páku a vložte tužku dovnitř tak, aby jakmile ji pustíte, tužka bude mírně tlačit na papír.</p>
+                    </div>
+                    <div class="col-span-1 relative group w-full flex flex-col justify-center">
+                        <div class="relative group w-full">
+                            <img src="./img/tisk/14.jpg" alt="" class="rounded-2xl">
+                            <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-1 relative group w-full flex flex-col justify-center">
+                    <p class="text-xl mb-3">Tužku můžete uchytit při vypnutém plotteru a ve stavu položené tužky. Mírně nadzvedněte páku a vložte tužku dovnitř tak, aby jakmile ji pustíte, tužka bude mírně tlačit na papír.</p>
+                    <p class="text-xl text-center">Výsledně by měl pohyb nahoru a dolů vypadat takto.</p>
+                    <div class="relative group w-full flex justify-center">
+                        <img src="./img/tisk/15.gif" alt="" class="rounded-2xl">
+                        <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                    </div>
+                </div>
+                <h1 class="font-bold text-4xl osnova-anchor" id="atrozebrani"><span class="text-5xl">2.</span> Tisk obrázku</h1>
+                <p class="text-xl">Otevřete UGS, připojte se, klikněte na zvýrazněné tlačítko a vyberte vygenerovaný <b>.gcode</b> soubor.</p>
+                <div class="relative group w-full flex justify-center">
+                    <img src="./img/tisk/16.png" alt="" class="rounded-2xl">
+                    <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                </div>
+                <p class="text-xl">Jakmile se vám otevře soubor, uvidíte po pravé straně náhled G-Codu. My musíme nejdříve vynulovat pozici tužky na levé straně (zvýrazněno) a taktéž musíme udělat i na reálném modelu. Posuňte vozíky na modelu tak, aby odpovídaly obrázku.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="relative group w-full flex justify-center">
+                        <img src="./img/tisk/18.png" alt="" class="rounded-2xl">
+                        <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                    </div>
+                    <div class="relative group w-full flex justify-center">
+                        <img src="./img/tisk/18.jpg" alt="" class="rounded-2xl">
+                        <div class="absolute bottom-0 right-0 m-2 rounded-lg px-2 text-opacity-50 text-black group-hover:text-opacity-100 group-hover:bg-gray-200 group-hover:bg-opacity-70 transition-all">Autor obrázku: Matyáš Cron</div>
+                    </div>
+                </div>
+                <p class="text-xl">Přichyťte papír, zmáčkněte tlačítko spuštění a sledujte, jak plotter kreslí váš výkres.</p>
+                <div class="flex justify-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/kaPhF24vIHM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
     </div>
     <footer class="bg-yellow-400 h-20 mt-5 flex content-center justify-between">
